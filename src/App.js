@@ -1,24 +1,46 @@
-import logo from './logo.svg';
+
 import './App.css';
 
+import UserList from './Components/UserList';
+import Product from './Components/Product';
+import FilteredUsers from './Components/FilteredUsers';
+import { useState } from 'react';
+
+
+
 function App() {
+
+  
+  const [UserList, setUserList] = useState([
+    {
+      id: 1,
+      name: "Taiyab"
+    },
+    {
+      id:2,
+      name: "Abhishek"
+    },
+    {
+      id:3,
+      name: "Ravi"
+    },
+    {
+      id: 4,
+      name: "Amit"
+    }
+  ]);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+    
+      <UserList />  
+
+      <Product/>
+
+      <FilteredUsers UserList = {UserList} />
+    
+    </>
+     
   );
 }
 
